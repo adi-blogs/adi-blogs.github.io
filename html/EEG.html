@@ -5,15 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EEG and Sleep Cycle</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <img style="width: 100%;" src="https://www.simplypsychology.org/wp-content/uploads/sleep-stages.jpeg" alt="">
-    <a href="https://www.simplypsychology.org/sleep-stages.html" style="float: right">source</a>
-    <br><br><br>
+    <div class="container">
+        <br /><br />
 
-    <h2 style="font-weight:700">What is the sleep cycle (EEGs)</h2>
+        <h2 style="font-weight:700">What is the sleep cycle (EEGs)</h2>
+        <p>
+            EEG, or electroencephalography, is a crucial measurement technique in the study of sleep patterns and brain
+            activity during different sleep stages. It involves placing electrodes on the scalp to record electrical
+            brain
+            activity. Sleep is a complex process with distinct stages, including REM (rapid eye movement) and non-REM
+            phases, each associated with specific EEG patterns. As an individual transitions from wakefulness to sleep,
+            their brain exhibits alpha and theta waves, indicating relaxation and drowsiness. Deeper sleep stages are
+            characterized by slower delta waves. Conversely, REM sleep, where vivid dreaming occurs, displays beta-like
+            brainwave patterns resembling wakefulness. When a patient with insomnia seeks evaluation, EEG can reveal
+            irregularities in sleep architecture, aiding in diagnosis and the development of tailored treatment
+            strategies.
+            It helps uncover the intricate interplay of sleep stages in memory consolidation, emotional processing, and
+            cognitive restoration, contributing to a deeper understanding of the role of sleep in maintaining overall
+            well-being.
+        </p>
+        <div id="image1" style="position: relative">
+            <img style="width: 100%;" src="https://www.simplypsychology.org/wp-content/uploads/sleep-stages.jpeg"
+                alt="">
+            <a href="https://www.simplypsychology.org/sleep-stages.html"
+                style="position: absolute;bottom: 56px;right: 8px; font-weight: 800; color: black;">source</a>
+            <br><br><br>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
+    <div class="form-check form-switch" style="position:absolute; top: 10px; right: 10px;">
+        <input id="DarkModeToggle" class="form-check-input" type="checkbox" role="switch">
+        <label id="DarkModeLabel" class="form-check-label" for="DarkModeToggle">Dark</label>
+    </div>
+    <script>
+        const checkbox = document.getElementById('DarkModeToggle');
+        const label = document.getElementById('DarkModeLabel');
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+                label.textContent = "Light";
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                label.textContent = "Dark";
+            }
+        });
+    </script>
 </body>
 
 </html>
