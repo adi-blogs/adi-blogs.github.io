@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Flippable Images</title>
+    <style>
+    .flip-card {
+    perspective: 1000px;
+    margin: 10px;
+    cursor: pointer;
+    }
+
+    .flip-card-inner {
+    width: 500px;
+    height: 300px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    }
+
+    .flipped .flip-card-inner {
+    transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    }
+
+    .flip-card-front img,
+    .flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    .flip-card-back {
+    transform: rotateY(180deg);
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <h1 class="font-weight-bold" style="font-weight: 700">Guess the identity and then click on the images below</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="flip-card" onclick="flipImage(this)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://images.pexels.com/photos/735174/pexels-photo-735174.jpeg?cs=srgb&dl=pexels-sameera-madusanka-735174.jpg&fm=jpg" alt="Lizard">
+              </div>
+              <div class="flip-card-back p-3 bg-black text-white">
+                <p>This is a lizard!</p>
+                <a href="https://images.pexels.com/photos/735174/pexels-photo-735174.jpeg?cs=srgb&dl=pexels-sameera-madusanka-735174.jpg&fm=jpg">source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="flip-card" onclick="flipImage(this)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://i.natgeofe.com/k/52d54f1f-45b3-4eba-9d2f-98c119a17f2c/gecko-tree-closeup-colorful-crop_4x3.jpg" alt="Gecko">
+              </div>
+              <div class="flip-card-back bg-black p-3 text-white">
+                <p>This is a gecko!</p>
+                <a href="https://i.natgeofe.com/k/52d54f1f-45b3-4eba-9d2f-98c119a17f2c/gecko-tree-closeup-colorful-crop_4x3.jpg">source</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="flip-card" onclick="flipImage(this)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://i.natgeofe.com/k/a42a2dd2-b777-4d84-890d-0f604db36781/spotted-salamander-closeup_4x3.jpg" alt="Salamander">
+              </div>
+              <div class="flip-card-back bg-black p-3 text-white">
+                <p>This is a salamander!</p>
+                <a href="">source</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="flip-card" onclick="flipImage(this)">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://i.natgeofe.com/n/de94c416-6d23-45f5-9708-e8d56289268e/naturepl_01132178.jpg?w=1084.125&h=1076.25" alt="Axolotl">
+              </div>
+              <div class="flip-card-back bg-black p-3 text-white">
+                <p>This is an axolotl!</p>
+                <a href="">source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script>
+    function flipImage(card) {
+      card.classList.toggle('flipped');
+    }
+    </script>
+
+  </body>
+</html>
+
